@@ -1,26 +1,23 @@
-// import TriviaCategories from "./TriviaCategories"
-import { useEffect, useState } from "react";
-import getQuestion from "./api"
-import MyComponent from "./MyComponent";
+import React, {useEffect} from "react";
+import {getQuestion} from "./api"
+
 
 export default function Question(){
 
-    const [question, setQuestion] = useState()
+    // const [question, setQuestion] = useState()
   
   useEffect(() => {
     getQuestion().then(res  =>  {
       console.log(res) 
       
-      const resQuestion = Object.keys(res) 
-      setQuestion(resQuestion)
+      // const resQuestion = Object.keys(res) 
+      // setQuestion(resQuestion)
   })
   }, [])
 
   return (
     <>
-    <di>
-        <MyComponent question={question} />
-    </di>
+    
     </>
   )
 };
